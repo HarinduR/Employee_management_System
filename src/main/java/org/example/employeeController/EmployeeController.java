@@ -17,6 +17,10 @@ public class EmployeeController {
 
     public void addEmployee(@RequestBody Employee employee) {
         employeeList.add(employee);
+    }
 
+    @GetMapping("get-all")
+    public List<Employee> getAll() {
+        return employeeList;
     }
 }
