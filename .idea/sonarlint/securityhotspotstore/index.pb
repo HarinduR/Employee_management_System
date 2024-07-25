@@ -29,8 +29,6 @@ Q.idea/sonarlint/securityhotspotstore/c/4/c49bca55ea78b345ea168dd143f90d914ffcda
 Q.idea/sonarlint/securityhotspotstore/d/7/d758b816d987a41dbef3abaae546c77ca87eb741,e\b\eb320e8b628b09e78e350964dc64bab5ee948e39
 d
 4src/main/java/org/example/entity/EmployeeEntity.java,9\1\91c4badf1f181705b4b310a3efde23b1893065a6
-j
-:src/main/java/org/example/service/EmployeeServiceImpl.java,e\d\ede00a9e5891bb42e39aacefc466ce27afdf1794
 f
 6src/main/java/org/example/service/EmployeeService.java,9\3\93c40b0c411cd4467f67d6257b6c9406a2ba798e
 o

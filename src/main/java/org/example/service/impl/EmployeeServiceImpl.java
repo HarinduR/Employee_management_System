@@ -27,7 +27,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public List<EmployeeEntity> getAll() {
-        return repository.findAll();
+    public List<Employee> getAll() {
+        List<Employee> employeeList = new ArrayList<>();
+        List<EmployeeEntity> allEntityList = repository.findAll();
+        ObjectMapper objectMapper = new ObjectMapper(); // Create ObjectMapper instance
+
+        allEntityList.forEach(employeeEntity -> {
+            employeeList.add(objectMapper.convertValue(employeeEntity, Employee.class)); // Use existing ObjectMapper instance
+        });
+
+        return employeeList;
     }
+
 }

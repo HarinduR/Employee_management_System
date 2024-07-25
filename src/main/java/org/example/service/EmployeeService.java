@@ -12,5 +12,5 @@ public interface EmployeeService {
 
     }
 
-    List<EmployeeEntity> getAll();
+    List<Employee> getAll();
 }
