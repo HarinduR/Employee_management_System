@@ -54,4 +54,14 @@ public class EmployeeServiceImpl implements EmployeeService {
             repository.save(entity); // Save the entity
         }
     }
+
+    @Override
+    public Employee findById(Long id) {
+        return repository.findById(id).map(entity -> {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return objectMapper.convertValue(entity, Employee.class);
+        }).orElse(new Employee());
+    }
+
+
 }
