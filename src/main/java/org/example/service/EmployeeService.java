@@ -8,7 +8,7 @@ import java.util.List;
 public interface EmployeeService {
 
 
-    default void addEmployee(Employee employee){
+    default void addEmployee(Employee employee) {
 
     }
 
@@ -19,4 +19,6 @@ public interface EmployeeService {
     void updateEmployee(Employee employee);
 
     Employee findById(Long id);
+
+    Employee findByFirstName(String firstName);
 }

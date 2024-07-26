@@ -63,5 +63,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         }).orElse(new Employee());
     }
 
+    @Override
+    public Employee findByFirstName(String firstName) {
+        ObjectMapper objectMapper = new ObjectMapper(); // Correct spelling and initialization
+        EmployeeEntity entity = repository.findByFirstName(firstName); // Assuming this method returns an EmployeeEntity
+        return objectMapper.convertValue(entity, Employee.class); // Correct spelling and method usage
+    }
+
+
 
 }
