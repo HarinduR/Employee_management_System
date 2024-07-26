@@ -46,4 +46,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
     }
 
+    @Override
+    public void updateEmployee(Employee employee) {
+        if (repository.findById(employee.getEmpId()).isPresent()) {
+            ObjectMapper objectMapper = new ObjectMapper(); // Create ObjectMapper instance
+            EmployeeEntity entity = objectMapper.convertValue(employee, EmployeeEntity.class); // Correct conversion
+            repository.save(entity); // Save the entity
+        }
+    }
 }
