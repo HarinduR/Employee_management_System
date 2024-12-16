@@ -61,4 +61,5 @@ public class EmployeeEntity {
 
     @Column(nullable = false)
     private String roleId; // Role ID (Foreign Key)
+
 }

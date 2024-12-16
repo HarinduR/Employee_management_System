@@ -63,28 +63,30 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/employees")
+@RequestMapping("/emp-controller")
+@CrossOrigin
 // Base URL will be http://localhost:8080/employees
 @RequiredArgsConstructor
+
 public class EmployeeController {
 
     private final EmployeeService employeeService;
 
     // Endpoint to add a new employee
-    @PostMapping("/add")
+    @PostMapping("/add-employee")
     @ResponseStatus(HttpStatus.CREATED)
     public void addEmployee(@RequestBody Employee employee) {
         employeeService.addEmployee(employee);
     }
 
     // Endpoint to get all employees
-    @GetMapping
+    @GetMapping("get-all")
     public List<Employee> getAllEmployees() {
         return employeeService.getAll();
     }
 
     // Endpoint to delete an employee by ID
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete-emp/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteEmployee(@PathVariable Long id) {
         employeeService.deleteEmployeeById(id);
@@ -98,7 +100,7 @@ public class EmployeeController {
     }
 
     // Endpoint to find an employee by ID
-    @GetMapping("/{id}")
+    @GetMapping("search-by-id/{id}")
     public Employee findEmployeeById(@PathVariable Long id) {
         return employeeService.findById(id);
     }
